@@ -10,13 +10,13 @@ class Wallet:
             self._balance = 0
 
     def deposit(self, amount):
-        if amount <=0:
+        if amount <= 0:
             return False  # Ваш код
         self._balance = self._balance + amount
         return True
 
     def withdraw(self, amount):
-        if amount <=0:
+        if amount <= 0:
             return False
         if self._balance < amount:
             return False
@@ -30,14 +30,15 @@ class Wallet:
 # === ЗАДАЧА 2 ===
 class Triangle:
     def __init__(self, a, b, c):
-        self.a  = a  
-        self.b  = b  
-        self.c  = c  
-  
+        self.a = a
+        self.b = b
+        self.c = c
+
     def perimeter(self):
         return self.a + self.b + self.c
-    def __str__ (self):
-        return f"Triangle {self.a}" 
+
+    def __str__(self):
+        return f"Triangle {self.a}"
 
 
 class Circle:
@@ -45,14 +46,15 @@ class Circle:
         self.r = r
 
     def perimeter(self):
-        return 2 * math.pi * self.r  
+        return 2 * math.pi * self.r
 
 
 def calculate_total_perimeter(shapes):
-    calk = 0 
+    calk = 0
     for i in shapes:
         calk = calk + i.perimeter()
     return calk
+
 
 # === ЗАДАЧА 3 ===
 class Vector2D:
@@ -67,7 +69,7 @@ class Vector2D:
             v = Vector2D(x, y)
             return v
         return NotImplemented
-        
+
     def __mul__(self, other):
         if isinstance(other, (int, float)):
             x = self.x * other
@@ -76,7 +78,6 @@ class Vector2D:
             return v
         return NotImplemented
 
-    
     def __eq__(self, other):
         if isinstance(other, Vector2D):
             if self.x != other.x:
@@ -86,13 +87,12 @@ class Vector2D:
             return True
         return NotImplemented
 
-    
     def __hash__(self):
-        return hash((self.x, self.y)) 
+        return hash((self.x, self.y))
 
-   
     def __repr__(self):
         return f"({self.x}, {self.y})"
+
     def __repr__(self):
         return f"({self.x}, {self.y})"
 
@@ -111,15 +111,12 @@ class Manager(Employee):
     pass  # Ваш код
 
 
-if __name__=="__main__":
-    
+if __name__ == "__main__":
     v1 = Vector2D(1, 2)
     v2 = Vector2D(3, 4)
     print(v1)
-    print(v1 + v2)          # (4, 6)
-    print(v1 * 3)           # (3, 6)
+    print(v1 + v2)  # (4, 6)
+    print(v1 * 3)  # (3, 6)
     print(v1 == (1, 2))  # NE
     print(v1 == Vector2D(1, 2))  # True
     print({v1, Vector2D(1, 2)})  # один элемент
-
-    
