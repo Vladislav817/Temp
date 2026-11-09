@@ -112,11 +112,7 @@ class Manager(Employee):
 
 
 if __name__ == "__main__":
-    v1 = Vector2D(1, 2)
-    v2 = Vector2D(3, 4)
-    print(v1)
-    print(v1 + v2)  # (4, 6)
-    print(v1 * 3)  # (3, 6)
-    print(v1 == (1, 2))  # NE
-    print(v1 == Vector2D(1, 2))  # True
-    print({v1, Vector2D(1, 2)})  # один элемент
+    manager = Manager("Alice", 50000, 5)
+
+    print(manager.calculate_bonus())  # 17500.0
+    print(isinstance(manager, Employee))  # True
